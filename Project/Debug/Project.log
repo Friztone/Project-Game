@@ -1,0 +1,15 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+  OnlyJumpScreen.cpp
+C:\Users\madfl\OneDrive\Documents\Kuliah\Sem V\Pemrograman Gim\Latest_Codes\TemplateProject-30-05-2024\TemplateProject\vs\Project\OnlyJumpScreen.cpp(23,20): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\madfl\OneDrive\Documents\Kuliah\Sem V\Pemrograman Gim\Latest_Codes\TemplateProject-30-05-2024\TemplateProject\vs\Project\OnlyJumpScreen.cpp(105,19): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\madfl\OneDrive\Documents\Kuliah\Sem V\Pemrograman Gim\Latest_Codes\TemplateProject-30-05-2024\TemplateProject\vs\Project\OnlyJumpScreen.cpp(134,20): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\madfl\OneDrive\Documents\Kuliah\Sem V\Pemrograman Gim\Latest_Codes\TemplateProject-30-05-2024\TemplateProject\vs\Project\OnlyJumpScreen.cpp(157,39): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+C:\Users\madfl\OneDrive\Documents\Kuliah\Sem V\Pemrograman Gim\Latest_Codes\TemplateProject-30-05-2024\TemplateProject\vs\Project\OnlyJumpScreen.cpp(157,39): warning C4244:         with
+C:\Users\madfl\OneDrive\Documents\Kuliah\Sem V\Pemrograman Gim\Latest_Codes\TemplateProject-30-05-2024\TemplateProject\vs\Project\OnlyJumpScreen.cpp(157,39): warning C4244:         [
+C:\Users\madfl\OneDrive\Documents\Kuliah\Sem V\Pemrograman Gim\Latest_Codes\TemplateProject-30-05-2024\TemplateProject\vs\Project\OnlyJumpScreen.cpp(157,39): warning C4244:             T=float
+C:\Users\madfl\OneDrive\Documents\Kuliah\Sem V\Pemrograman Gim\Latest_Codes\TemplateProject-30-05-2024\TemplateProject\vs\Project\OnlyJumpScreen.cpp(157,39): warning C4244:         ]
+C:\Users\madfl\OneDrive\Documents\Kuliah\Sem V\Pemrograman Gim\Latest_Codes\TemplateProject-30-05-2024\TemplateProject\vs\Project\OnlyJumpScreen.cpp(318,47): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\madfl\OneDrive\Documents\Kuliah\Sem V\Pemrograman Gim\Latest_Codes\TemplateProject-30-05-2024\TemplateProject\vs\Project\OnlyJumpScreen.cpp(318,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\madfl\OneDrive\Documents\Kuliah\Sem V\Pemrograman Gim\Latest_Codes\TemplateProject-30-05-2024\TemplateProject\vs\Project\OnlyJumpScreen.cpp(322,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\madfl\OneDrive\Documents\Kuliah\Sem V\Pemrograman Gim\Latest_Codes\TemplateProject-30-05-2024\TemplateProject\vs\Project\OnlyJumpScreen.cpp(323,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Project.vcxproj -> C:\Users\madfl\OneDrive\Documents\Kuliah\Sem V\Pemrograman Gim\Latest_Codes\TemplateProject-30-05-2024\TemplateProject\vs\Project\Project_debug.exe
