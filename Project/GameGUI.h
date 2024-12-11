@@ -3,10 +3,11 @@
 
 #include "Game.h"
 #include "Setting.h"
-#include "MainMenuScreen.h"
-#include "InGameScreen.h"
 #include "OnlyJumpScreen.h"
 #include "MenuScreen.h"
+#include "GameOverScreen.h"
+#include "ScoreScreen.h"
+
 
 
 namespace Engine {

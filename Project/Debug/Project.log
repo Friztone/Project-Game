@@ -1,15 +1,29 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+  GameOverScreen.cpp
+C:\Users\madfl\OneDrive\Documents\Kuliah\Sem V\Pemrograman Gim\Latest_Codes\TemplateProject-30-05-2024\TemplateProject\vs\Project\GameOverScreen.cpp(15,217): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\madfl\OneDrive\Documents\Kuliah\Sem V\Pemrograman Gim\Latest_Codes\TemplateProject-30-05-2024\TemplateProject\vs\Project\GameOverScreen.cpp(15,151): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\madfl\OneDrive\Documents\Kuliah\Sem V\Pemrograman Gim\Latest_Codes\TemplateProject-30-05-2024\TemplateProject\vs\Project\GameOverScreen.cpp(23,70): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\madfl\OneDrive\Documents\Kuliah\Sem V\Pemrograman Gim\Latest_Codes\TemplateProject-30-05-2024\TemplateProject\vs\Project\GameOverScreen.cpp(27,72): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\madfl\OneDrive\Documents\Kuliah\Sem V\Pemrograman Gim\Latest_Codes\TemplateProject-30-05-2024\TemplateProject\vs\Project\GameOverScreen.cpp(31,72): warning C4305: 'argument': truncation from 'double' to 'float'
   OnlyJumpScreen.cpp
 C:\Users\madfl\OneDrive\Documents\Kuliah\Sem V\Pemrograman Gim\Latest_Codes\TemplateProject-30-05-2024\TemplateProject\vs\Project\OnlyJumpScreen.cpp(23,20): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\madfl\OneDrive\Documents\Kuliah\Sem V\Pemrograman Gim\Latest_Codes\TemplateProject-30-05-2024\TemplateProject\vs\Project\OnlyJumpScreen.cpp(105,19): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\madfl\OneDrive\Documents\Kuliah\Sem V\Pemrograman Gim\Latest_Codes\TemplateProject-30-05-2024\TemplateProject\vs\Project\OnlyJumpScreen.cpp(134,20): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\madfl\OneDrive\Documents\Kuliah\Sem V\Pemrograman Gim\Latest_Codes\TemplateProject-30-05-2024\TemplateProject\vs\Project\OnlyJumpScreen.cpp(157,39): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
-C:\Users\madfl\OneDrive\Documents\Kuliah\Sem V\Pemrograman Gim\Latest_Codes\TemplateProject-30-05-2024\TemplateProject\vs\Project\OnlyJumpScreen.cpp(157,39): warning C4244:         with
-C:\Users\madfl\OneDrive\Documents\Kuliah\Sem V\Pemrograman Gim\Latest_Codes\TemplateProject-30-05-2024\TemplateProject\vs\Project\OnlyJumpScreen.cpp(157,39): warning C4244:         [
-C:\Users\madfl\OneDrive\Documents\Kuliah\Sem V\Pemrograman Gim\Latest_Codes\TemplateProject-30-05-2024\TemplateProject\vs\Project\OnlyJumpScreen.cpp(157,39): warning C4244:             T=float
-C:\Users\madfl\OneDrive\Documents\Kuliah\Sem V\Pemrograman Gim\Latest_Codes\TemplateProject-30-05-2024\TemplateProject\vs\Project\OnlyJumpScreen.cpp(157,39): warning C4244:         ]
-C:\Users\madfl\OneDrive\Documents\Kuliah\Sem V\Pemrograman Gim\Latest_Codes\TemplateProject-30-05-2024\TemplateProject\vs\Project\OnlyJumpScreen.cpp(318,47): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\madfl\OneDrive\Documents\Kuliah\Sem V\Pemrograman Gim\Latest_Codes\TemplateProject-30-05-2024\TemplateProject\vs\Project\OnlyJumpScreen.cpp(318,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\madfl\OneDrive\Documents\Kuliah\Sem V\Pemrograman Gim\Latest_Codes\TemplateProject-30-05-2024\TemplateProject\vs\Project\OnlyJumpScreen.cpp(322,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\madfl\OneDrive\Documents\Kuliah\Sem V\Pemrograman Gim\Latest_Codes\TemplateProject-30-05-2024\TemplateProject\vs\Project\OnlyJumpScreen.cpp(323,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\madfl\OneDrive\Documents\Kuliah\Sem V\Pemrograman Gim\Latest_Codes\TemplateProject-30-05-2024\TemplateProject\vs\Project\OnlyJumpScreen.cpp(106,19): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\madfl\OneDrive\Documents\Kuliah\Sem V\Pemrograman Gim\Latest_Codes\TemplateProject-30-05-2024\TemplateProject\vs\Project\OnlyJumpScreen.cpp(136,20): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\madfl\OneDrive\Documents\Kuliah\Sem V\Pemrograman Gim\Latest_Codes\TemplateProject-30-05-2024\TemplateProject\vs\Project\OnlyJumpScreen.cpp(159,39): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+C:\Users\madfl\OneDrive\Documents\Kuliah\Sem V\Pemrograman Gim\Latest_Codes\TemplateProject-30-05-2024\TemplateProject\vs\Project\OnlyJumpScreen.cpp(159,39): warning C4244:         with
+C:\Users\madfl\OneDrive\Documents\Kuliah\Sem V\Pemrograman Gim\Latest_Codes\TemplateProject-30-05-2024\TemplateProject\vs\Project\OnlyJumpScreen.cpp(159,39): warning C4244:         [
+C:\Users\madfl\OneDrive\Documents\Kuliah\Sem V\Pemrograman Gim\Latest_Codes\TemplateProject-30-05-2024\TemplateProject\vs\Project\OnlyJumpScreen.cpp(159,39): warning C4244:             T=float
+C:\Users\madfl\OneDrive\Documents\Kuliah\Sem V\Pemrograman Gim\Latest_Codes\TemplateProject-30-05-2024\TemplateProject\vs\Project\OnlyJumpScreen.cpp(159,39): warning C4244:         ]
+C:\Users\madfl\OneDrive\Documents\Kuliah\Sem V\Pemrograman Gim\Latest_Codes\TemplateProject-30-05-2024\TemplateProject\vs\Project\OnlyJumpScreen.cpp(319,47): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\madfl\OneDrive\Documents\Kuliah\Sem V\Pemrograman Gim\Latest_Codes\TemplateProject-30-05-2024\TemplateProject\vs\Project\OnlyJumpScreen.cpp(319,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\madfl\OneDrive\Documents\Kuliah\Sem V\Pemrograman Gim\Latest_Codes\TemplateProject-30-05-2024\TemplateProject\vs\Project\OnlyJumpScreen.cpp(323,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\madfl\OneDrive\Documents\Kuliah\Sem V\Pemrograman Gim\Latest_Codes\TemplateProject-30-05-2024\TemplateProject\vs\Project\OnlyJumpScreen.cpp(324,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\madfl\OneDrive\Documents\Kuliah\Sem V\Pemrograman Gim\Latest_Codes\TemplateProject-30-05-2024\TemplateProject\vs\Project\OnlyJumpScreen.cpp(388,20): warning C4018: '<': signed/unsigned mismatch
+  ScoreScreen.cpp
+C:\Users\madfl\OneDrive\Documents\Kuliah\Sem V\Pemrograman Gim\Latest_Codes\TemplateProject-30-05-2024\TemplateProject\vs\Project\ScoreScreen.cpp(26,165): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\madfl\OneDrive\Documents\Kuliah\Sem V\Pemrograman Gim\Latest_Codes\TemplateProject-30-05-2024\TemplateProject\vs\Project\ScoreScreen.cpp(26,112): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\madfl\OneDrive\Documents\Kuliah\Sem V\Pemrograman Gim\Latest_Codes\TemplateProject-30-05-2024\TemplateProject\vs\Project\ScoreScreen.cpp(31,106): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\madfl\OneDrive\Documents\Kuliah\Sem V\Pemrograman Gim\Latest_Codes\TemplateProject-30-05-2024\TemplateProject\vs\Project\ScoreScreen.cpp(34,115): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\madfl\OneDrive\Documents\Kuliah\Sem V\Pemrograman Gim\Latest_Codes\TemplateProject-30-05-2024\TemplateProject\vs\Project\ScoreScreen.cpp(34,106): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
   Project.vcxproj -> C:\Users\madfl\OneDrive\Documents\Kuliah\Sem V\Pemrograman Gim\Latest_Codes\TemplateProject-30-05-2024\TemplateProject\vs\Project\Project_debug.exe

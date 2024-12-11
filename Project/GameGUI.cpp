@@ -12,7 +12,7 @@ Engine::GameGUI::~GameGUI()
 void Engine::GameGUI::Init()
 {
 	Engine::ScreenManager::GetInstance(this)->AddScreen("ingame", new OnlyJumpScreen())
-		->AddScreen("mainmenu", new MenuScreen())->SetCurrentScreen("mainmenu");
+		->AddScreen("mainmenu", new MenuScreen())->AddScreen("gameover", new GameOverScreen())->AddScreen("score", new ScoreScreen())->SetCurrentScreen("mainmenu");
 
 }
 

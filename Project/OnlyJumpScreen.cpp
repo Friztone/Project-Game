@@ -14,7 +14,7 @@ void Engine::OnlyJumpScreen::Init()
 	Texture* bgTexture = new Texture("background.png");
 	backgroundSprite = (new Sprite(bgTexture, game->GetDefaultSpriteShader(), game->GetDefaultQuad()))->SetSize((float)game->GetSettings()->screenWidth, (float)game->GetSettings()->screenHeight);
 
-	// Load lava texture and create ground sprite
+	// Load texture and create sprite
 	Texture* lavaTexture = new Texture("lava.png");
 	lavaSprite = new Sprite(lavaTexture, game->GetDefaultSpriteShader(), game->GetDefaultQuad());
 	lavaSprite->SetSize(137, 50);
@@ -65,6 +65,7 @@ void Engine::OnlyJumpScreen::Init()
 	text->SetScale(1.0f)->SetColor(255, 255, 255)->SetPosition(0, game->GetSettings()->screenHeight - (text->GetFontSize() * text->GetScale()));
 	highScoreText = new Text("lucon.ttf", 24, game->GetDefaultTextShader());
 	highScoreText->SetScale(1.0f)->SetColor(255, 255, 255)->SetPosition(0, game->GetSettings()->screenHeight - (highScoreText->GetFontSize() * 2 * highScoreText->GetScale()));
+	LoadHighScore();
 
 
 
@@ -93,7 +94,7 @@ void Engine::OnlyJumpScreen::Update()
 	characterSprite->PlayAnim("idle");
 
 	// Move lava sprites to the left
-	float lavaSpeed = 0.03f; // Adjust speed as needed
+	float lavaSpeed = 0.03f; // Adjust speed
 	for (Sprite* lava : lavaSprites) {
 		vec2 lavaPos = lava->GetPosition();
 		lavaPos.x -= lavaSpeed * game->GetGameTime(); // Move to the left
@@ -122,15 +123,16 @@ void Engine::OnlyJumpScreen::Update()
 	}
 
 	characterSprite->SetPosition(x, y);
-
-	if (y < 0) { // Check if character's Y position is below the screen
-		ScreenManager::GetInstance(game)->SetCurrentScreen("mainmenu");
+	// Check if character's Y position is below the screen
+	if (y < 0) {
+		ScreenManager::GetInstance(game)->SetCurrentScreen("gameover");
+		UpdateHighScores(score);
 		Reset();
 		soundGameOver->Play(false);
 		return;
 	}
 
-	// Portal screen wrapping: jika karakter keluar dari layar, pindahkan ke sisi sebaliknya
+	// Portal screen wrapping
 	float screenWidth = game->GetSettings()->screenWidth;
 	float characterWidth = characterSprite->GetScaleWidth();
 
@@ -228,8 +230,7 @@ void Engine::OnlyJumpScreen::Update()
 	spawnDuration += (game->GetGameTime());
 
 	text->SetText(("Score = " + to_string(score)));
-	highScoreText->SetText(("High Score = " + to_string(highScore)));
-
+	highScoreText->SetText("High Score = " + std::to_string(highScore));
 
 	characterSprite->Update(game->GetGameTime());
 
@@ -304,7 +305,7 @@ void Engine::OnlyJumpScreen::SpawnObjects()
 }
 
 void Engine::OnlyJumpScreen::Reset() {
-	// Reset karakter ke posisi awal
+	// Reset karakter
 	characterSprite->SetPosition(420, 300);
 	characterSprite->SetScale(1.5f);
 	characterSprite->PlayAnim("idle");
@@ -313,20 +314,82 @@ void Engine::OnlyJumpScreen::Reset() {
 	jump = false;
 	yVelocity = 0;
 
-	// Reset semua platform ke posisi awal
+	// Reset platform
 	for (int i = 0; i < 4; i++) {
-		platforms[i]->SetPosition(200 + i * 210, 90 + i * (game->GetSettings()->screenHeight)/4); // Posisi platform kembali ke posisi semula
+		platforms[i]->SetPosition(200 + i * 210, 90 + i * (game->GetSettings()->screenHeight)/4);
 	}
 
 	// Reset lava sprites
 	for (int i = 0; i < lavaSprites.size(); i++) {
-		lavaSprites[i]->SetPosition(i * 137, 0); // Posisi lava kembali ke posisi semula
+		lavaSprites[i]->SetPosition(i * 137, 0);
 	}
 
-	// Reset waktu spawn
+	// Reset time
 	spawnDuration = 0;
 	maxSpawnTime = 1000;
 	score = 0;
 }
+
+void Engine::OnlyJumpScreen::LoadHighScore() {
+	std::ifstream scoresFile("scores.txt");
+	if (!scoresFile.is_open()) {
+		std::ofstream outFile("scores.txt");
+		for (int i = 0; i < 5; ++i) {
+			outFile << "0\n";
+		}
+		outFile.close();
+		highScore = 0; // Set high score
+	}
+	else {
+		int score;
+		scoresFile >> score;
+		highScore = score;
+		scoresFile.close();
+	}
+}
+
+void Engine::OnlyJumpScreen::UpdateHighScores(int score) {
+	// open file
+	std::ifstream scoresFile("scores.txt");
+	std::vector<int> scores;
+
+	if (!scoresFile.is_open()) {
+		// check file
+		for (int i = 0; i < 5; ++i) {
+			scores.push_back(0);
+		}
+	}
+	else {
+		// read file
+		int s;
+		while (scoresFile >> s) {
+			scores.push_back(s);
+		}
+		scoresFile.close();
+
+		while (scores.size() < 5) {
+			scores.push_back(0);
+		}
+	}
+
+	// add score to file
+	if (score > scores.back()) {
+		scores.push_back(score);
+		std::sort(scores.begin(), scores.end(), std::greater<int>()); // Sorting
+
+		// Remove score
+		if (scores.size() > 5) {
+			scores.pop_back();
+		}
+	}
+
+	// Save Score to file
+	std::ofstream outFile("scores.txt", std::ios::trunc);
+	for (int i = 0; i < scores.size(); ++i) {
+		outFile << scores[i] << "\n";
+	}
+	outFile.close();
+}
+
 
 

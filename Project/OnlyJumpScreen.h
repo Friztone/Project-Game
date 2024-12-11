@@ -13,6 +13,8 @@
 #include "ScreenManager.h"
 #include "Text.h"
 #include <vector>
+#include <algorithm>
+
 
 
 
@@ -25,6 +27,8 @@ namespace Engine {
 		void Init();
 		void Update();
 		void Draw();
+		void LoadHighScore();
+		void UpdateHighScores(int score);
 	private:
 		Engine::Sprite* CreateSprite(Texture* texture);
 		Texture* dotTexture = NULL;

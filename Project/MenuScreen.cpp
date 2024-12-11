@@ -10,32 +10,41 @@ void Engine::MenuScreen::Init()
 	Texture* mainMenuTexture = new Texture("mainmenu.png");
 	mainMenuBg = (new Sprite(mainMenuTexture, game->GetDefaultSpriteShader(), game->GetDefaultQuad()))->SetSize((float)game->GetSettings()->screenWidth, (float)game->GetSettings()->screenHeight);
 	// Create a Texture
-	Texture* texture = new Texture("buttons.png");
-	Texture* logoTexture = new Texture("logo.png");
-	logoText = (new Sprite(logoTexture, game->GetDefaultSpriteShader(), game->GetDefaultQuad()))->SetSize(393, 95)->SetPosition((game->GetSettings()->screenWidth/2)- 196, (game->GetSettings()->screenHeight)-180);
+	Texture* texture = new Texture("button.png");
+	Texture* logoTexture = new Texture("OnlyJump.png");
+	logoText = (new Sprite(logoTexture, game->GetDefaultSpriteShader(), game->GetDefaultQuad()))->SetPosition((game->GetSettings()->screenWidth / 2) - (logoTexture->GetWidth() / 2) * 0.8, (game->GetSettings()->screenHeight) / 1.3)-> SetScale(0.8);
 
 
 
 
 	// Create Sprites
-	Sprite* playSprite = (new Sprite(texture, game->GetDefaultSpriteShader(), game->GetDefaultQuad()))
-		->SetNumXFrames(6)->SetNumYFrames(1)->AddAnimation("normal", 5, 5)->AddAnimation("hover", 3, 4)
-		->AddAnimation("press", 3, 4)->SetAnimationDuration(400)->SetScale(0.5);
+	Sprite* restartSprite = (new Sprite(texture, game->GetDefaultSpriteShader(), game->GetDefaultQuad()))
+		->SetNumXFrames(15)->SetNumYFrames(1)->AddAnimation("normal", 3, 3)->AddAnimation("hover", 4, 5)
+		->AddAnimation("press", 4, 5)->SetAnimationDuration(400)->SetScale(0.5);
 
-	Sprite* exitSprite = (new Sprite(texture, game->GetDefaultSpriteShader(), game->GetDefaultQuad()))
-		->SetNumXFrames(6)->SetNumYFrames(1)->AddAnimation("normal", 2, 2)->AddAnimation("hover", 0, 1)
-		->AddAnimation("press", 0, 1)->SetAnimationDuration(400)->SetScale(0.5);
+	Sprite* scoreSprite = (new Sprite(texture, game->GetDefaultSpriteShader(), game->GetDefaultQuad()))
+		->SetNumXFrames(15)->SetNumYFrames(1)->AddAnimation("normal", 12, 12)->AddAnimation("hover", 13, 14)
+		->AddAnimation("press", 13, 14)->SetAnimationDuration(400)->SetScale(0.5);
+
+	Sprite* menuSprite = (new Sprite(texture, game->GetDefaultSpriteShader(), game->GetDefaultQuad()))
+		->SetNumXFrames(15)->SetNumYFrames(1)->AddAnimation("normal", 0, 0)->AddAnimation("hover", 1, 2)
+		->AddAnimation("press", 1, 2)->SetAnimationDuration(400)->SetScale(0.5);
 
 	//Create Buttons
-	Button* playButton = new Button(playSprite, "play");
-	playButton->SetPosition((game->GetSettings()->screenWidth / 2) - (playSprite->GetScaleWidth() / 2),
+	Button* restartButton = new Button(restartSprite, "restart");
+	restartButton->SetPosition((game->GetSettings()->screenWidth / 2) - (restartSprite->GetScaleWidth() / 2),
 		400);
-	buttons.push_back(playButton);
+	buttons.push_back(restartButton);
 
-	Button* exitButton = new Button(exitSprite, "exit");
-	exitButton->SetPosition((game->GetSettings()->screenWidth / 2) - (exitSprite->GetScaleWidth() / 2),
-		250);
-	buttons.push_back(exitButton);
+	Button* scoreButton = new Button(scoreSprite, "score");
+	scoreButton->SetPosition((game->GetSettings()->screenWidth / 2) - (scoreSprite->GetScaleWidth() / 2),
+		275);
+	buttons.push_back(scoreButton);
+
+	Button* menuButton = new Button(menuSprite, "menu");
+	menuButton->SetPosition((game->GetSettings()->screenWidth / 2) - (menuSprite->GetScaleWidth() / 2),
+		150);
+	buttons.push_back(menuButton);
 
 	// Set play button into active button
 	currentButtonIndex = 0;
@@ -77,10 +86,13 @@ void Engine::MenuScreen::Update()
 		Button* b = buttons[currentButtonIndex];
 		b->SetButtonState(Engine::ButtonState::PRESS);
 		// If play button then go to InGame, exit button then exit
-		if ("play" == b->GetButtonName()) {
+		if ("restart" == b->GetButtonName()) {
 			ScreenManager::GetInstance(game)->SetCurrentScreen("ingame");
 		}
-		else if ("exit" == b->GetButtonName()) {
+		else if ("score" == b->GetButtonName()) {
+			ScreenManager::GetInstance(game)->SetCurrentScreen("score");
+		}
+		else if ("menu" == b->GetButtonName()) {
 			game->SetState(Engine::State::EXIT);
 		}
 	}
